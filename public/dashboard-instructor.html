@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Instructor Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page-bg">
+  <div class="app">
+    <div class="card">
+      <div class="header">
+        <h2 id="greet">Instructor Dashboard</h2><button onclick="logout()">Logout</button>
+      </div>
+      <div id="bankInfo" class="small"></div>
+      <h3>Your Courses</h3>
+      <div id="myCourses" class="course-list"></div>
+      <h3>Add Course</h3>
+      <input id="newTitle" placeholder="Course title"><input id="newPrice" placeholder="Course price"><button
+        onclick="addCourse()">Add Course</button>
+      <p id="addMsg" class="note"></p>
+      <h3>Collect Payments</h3><button onclick="collectFunds()">Collect Money</button>
+      <p id="collectMsg" class="note"></p>
+    </div>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user || user.role !== "instructor") location.href = "/login.html";
+    document.getElementById("greet").innerText = `Welcome, ${user.name}`;
+
+    async function load() {
+      const cR = await fetch("/api/courses"); const courses = await cR.json();
+      const mine = courses.filter(c => c.instructorId === user.id);
+      const box = document.getElementById("myCourses"); box.innerHTML = "";
+      mine.forEach(c => box.innerHTML += `<div class="course"><strong>${c.title}</strong><div class="small">Price: ${c.price}</div><button onclick="openCourse('${c.id}')">Open</button></div>`);
+      const b = await fetch(`/api/bank/balance/${user.id}`); const bj = await b.json();
+      document.getElementById("bankInfo").innerText = `Your Bank Balance: ${bj.balance || 0}`;
+    }
+
+    function openCourse(id) { location.href = `/course-instructor.html?id=${id}`; }
+    async function addCourse() {
+      const title = document.getElementById("newTitle").value; const price = document.getElementById("newPrice").value;
+      const res = await fetch("/api/courses/add", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ instructorId: user.id, title, price }) });
+      const j = await res.json(); document.getElementById("addMsg").innerText = j.message || j.error; load();
+    }
+    async function collectFunds() {
+      const secret = prompt("Enter bank secret:"); if (!secret) return;
+      const res = await fetch("/api/instructor/collect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ instructorId: user.id, secret }) });
+      const j = await res.json(); document.getElementById("collectMsg").innerText = j.message || j.error; load();
+    }
+    function logout() { localStorage.removeItem("user"); location.href = "/login.html"; }
+    load();
+  </script>
+</body>
+
+</html>

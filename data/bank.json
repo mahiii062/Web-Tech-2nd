@@ -1,0 +1,98 @@
+[
+  {
+    "userId": "instr-1",
+    "accountNumber": "ACC-INSTR-001",
+    "secret": "instr1secret",
+    "balance": 2000
+  },
+  {
+    "userId": "instr-2",
+    "accountNumber": "ACC-INSTR-002",
+    "secret": "instr2secret",
+    "balance": 1300
+  },
+  {
+    "userId": "instr-3",
+    "accountNumber": "ACC-INSTR-003",
+    "secret": "instr3secret",
+    "balance": 900
+  },
+  {
+    "userId": "learner-1",
+    "accountNumber": "ACC-LRN-001",
+    "secret": "learner1secret",
+    "balance": 2000
+  },
+  {
+    "userId": "learner-2",
+    "accountNumber": "ACC-LRN-002",
+    "secret": "learner2secret",
+    "balance": 1500
+  },
+  {
+    "userId": "LMS",
+    "accountNumber": "ACC-LMS-000",
+    "secret": "lmssecret",
+    "balance": 0
+  },
+  {
+    "userId": "51c969d4-cae1-45b4-9a33-af185ac8caca",
+    "accountNumber": "mahiiii",
+    "secret": "1218",
+    "balance": 1500
+  },
+  {
+    "userId": "c5449111-bd7e-486f-9167-c32c4b1a1866",
+    "accountNumber": "mahi1218",
+    "secret": "1218",
+    "balance": 2000
+  },
+  {
+    "userId": "316e5357-bdc8-4cfe-a993-0d7a32247853",
+    "accountNumber": "mahi12",
+    "secret": "1218",
+    "balance": 100
+  },
+  {
+    "userId": "4c24623a-3df3-48e4-95a9-0b4829a312d3",
+    "accountNumber": "1218mahi.mashfik",
+    "secret": "1218",
+    "balance": 1550
+  },
+  {
+    "userId": "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
+    "accountNumber": "rashed123456",
+    "secret": "123456",
+    "balance": 200
+  },
+  {
+    "userId": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
+    "accountNumber": "neelima1234567",
+    "secret": "1234567",
+    "balance": 100
+  },
+  {
+    "userId": "35e42844-16f5-495e-a70a-355485285c2f",
+    "accountNumber": "abc123",
+    "secret": "abc123",
+    "balance": 2000
+  },
+  {
+    "userId": "48fb01ae-0e42-4ed7-aedd-ae030eda899d",
+    "accountNumber": "1234abcd",
+    "secret": "abcd1234",
+    "balance": 2000
+  },
+  {
+    "userId": "0950de73-bdf4-4005-9015-0a1d27775662",
+    "accountNumber": "qwe123",
+    "secret": "123qwe",
+    "balance": 1500
+  },
+  {
+    "userId": "7e5f7b80-e0f5-4a0d-9244-a2837623463c",
+    "accountNumber": "marm1234",
+    "secret": "marm1234",
+    "balance": 1500
+  }
+]

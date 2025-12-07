@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Learner Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page-bg">
+  <div class="app">
+    <div class="card">
+      <div class="header">
+        <h2 id="greet">Learner Dashboard</h2><button onclick="logout()">Logout</button>
+      </div>
+      <div id="bankInfo" class="small"></div>
+      <h3>Available Courses</h3>
+      <div id="coursesArea" class="course-list"></div>
+      <h3>Your Certificates</h3>
+      <div id="certificates"></div>
+    </div>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user || user.role !== "learner") location.href = "/login.html";
+    document.getElementById("greet").innerText = `Welcome, ${user.name}`;
+
+    async function load() {
+      const cR = await fetch("/api/courses");
+      const courses = await cR.json();
+      const area = document.getElementById("coursesArea"); area.innerHTML = "";
+      courses.forEach(c => {
+        area.innerHTML += `<div class="course"><strong>${c.title}</strong><div class="small">Price: ${c.price}</div><button onclick="openCourse('${c.id}')">View</button></div>`;
+      });
+      const b = await fetch(`/api/bank/balance/${user.id}`); const bj = await b.json();
+      document.getElementById("bankInfo").innerText = `Your Bank Balance: ${bj.balance || 0}`;
+      loadCertificates();
+    }
+
+    function openCourse(id) { location.href = `/course-learner.html?id=${id}`; }
+    function logout() { localStorage.removeItem("user"); location.href = "/login.html"; }
+
+    async function loadCertificates() {
+      const res = await fetch(`/api/cert/list/${user.id}`);
+      if (res.ok) {
+        const certs = await res.json();
+        const area = document.getElementById("certificates"); area.innerHTML = "";
+        certs.forEach(c => area.innerHTML += `<div class="certificate-item"><strong>${c.courseTitle}</strong><br><a href="${c.url}" target="_blank">View</a></div>`);
+      } else {
+        document.getElementById("certificates").innerHTML = "<div class='small'>No certificates yet</div>";
+      }
+    }
+
+    load();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "1765013202595",
+    "fromUserId": "51c969d4-cae1-45b4-9a33-af185ac8caca",
+    "toUserId": "LMS",
+    "amount": 500,
+    "courseId": "course-1",
+    "date": "2025-12-06T09:26:42.597Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "1765014606047",
+    "fromUserId": "316e5357-bdc8-4cfe-a993-0d7a32247853",
+    "toUserId": "LMS",
+    "amount": 700,
+    "courseId": "course-2",
+    "date": "2025-12-06T09:50:06.048Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "1765015473720",
+    "fromUserId": "316e5357-bdc8-4cfe-a993-0d7a32247853",
+    "toUserId": "LMS",
+    "amount": 600,
+    "courseId": "course-5",
+    "date": "2025-12-06T10:04:33.721Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "1765015709265",
+    "fromUserId": "316e5357-bdc8-4cfe-a993-0d7a32247853",
+    "toUserId": "LMS",
+    "amount": 600,
+    "courseId": "course-5",
+    "date": "2025-12-06T10:08:29.265Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "1765017403108",
+    "fromUserId": "4c24623a-3df3-48e4-95a9-0b4829a312d3",
+    "toUserId": "LMS",
+    "amount": 450,
+    "courseId": "course-3",
+    "date": "2025-12-06T10:36:43.109Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "1765107964559",
+    "fromUserId": "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
+    "toUserId": "LMS",
+    "amount": 500,
+    "courseId": "course-1",
+    "date": "2025-12-07T11:46:04.559Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "f2601350-ffd9-42eb-ad67-18a06eeda5d6",
+    "learnerId": "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
+    "courseId": "course-2",
+    "instructorId": "instr-2",
+    "amount": 700,
+    "status": "completed"
+  },
+  {
+    "id": "3c32ab6e-1f20-4724-8f5c-6d42b1513e4b",
+    "learnerId": "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
+    "courseId": "course-4",
+    "instructorId": "instr-3",
+    "amount": 300,
+    "status": "completed"
+  },
+  {
+    "id": "903b6943-6684-4b82-a4b4-faaa46fc7599",
+    "learnerId": "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
+    "courseId": "course-4",
+    "instructorId": "instr-3",
+    "amount": 300,
+    "status": "completed"
+  },
+  {
+    "id": "24532104-1709-4ab8-95b5-4814aa99fe28",
+    "learnerId": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
+    "courseId": "course-1",
+    "instructorId": "instr-1",
+    "amount": 500,
+    "status": "completed"
+  },
+  {
+    "id": "d621244b-bd05-43c2-890b-e23209a4bf8d",
+    "learnerId": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
+    "courseId": "course-5",
+    "instructorId": "instr-2",
+    "amount": 600,
+    "status": "completed"
+  },
+  {
+    "id": "c7b2734f-f5ae-4a6c-93c1-62478b3fc8af",
+    "learnerId": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
+    "courseId": "course-1",
+    "instructorId": "instr-1",
+    "amount": 500,
+    "status": "completed"
+  },
+  {
+    "id": "5f64e625-348b-44fd-a685-e9a6aa23b84d",
+    "learnerId": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
+    "courseId": "course-4",
+    "instructorId": "instr-3",
+    "amount": 300,
+    "status": "completed"
+  },
+  {
+    "id": "01a71784-9116-4cd8-8d89-3ff54f32c0fb",
+    "learnerId": "0950de73-bdf4-4005-9015-0a1d27775662",
+    "courseId": "course-1",
+    "instructorId": "instr-1",
+    "amount": 500,
+    "status": "completed"
+  },
+  {
+    "id": "5a3f253e-bbbc-4316-a7b8-ee4f303bbacb",
+    "learnerId": "7e5f7b80-e0f5-4a0d-9244-a2837623463c",
+    "courseId": "course-1",
+    "instructorId": "instr-1",
+    "amount": 500,
+    "status": "completed"
+  }
+]
