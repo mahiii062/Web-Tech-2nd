@@ -1,8 +1,8 @@
 [
   {
     "id": "course-1",
-    "title": "JavaScript Basics",
-    "price": 500,
+    "title": "Structured Programming Language with (C)",
+    "price": 450,
     "instructorId": "instr-1",
     "materials": [],
     "students": [
@@ -28,8 +28,8 @@
   },
   {
     "id": "course-2",
-    "title": "Node.js Mastery",
-    "price": 700,
+    "title": "Data Structure & Algorithm with (C++)",
+    "price": 500,
     "instructorId": "instr-2",
     "materials": [],
     "students": [
@@ -37,13 +37,17 @@
       {
         "userId": "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
         "unlocked": true
+      },
+      {
+        "userId": "64f83c62-cc38-44f0-b8ee-a97f65027d31",
+        "unlocked": true
       }
     ]
   },
   {
     "id": "course-3",
-    "title": "React Beginner",
-    "price": 450,
+    "title": "Object Oriented Programming with Java",
+    "price": 550,
     "instructorId": "instr-1",
     "materials": [],
     "students": [
@@ -52,8 +56,8 @@
   },
   {
     "id": "course-4",
-    "title": "HTML & CSS",
-    "price": 300,
+    "title": "Introduction to Data Science with Python",
+    "price": 600,
     "instructorId": "instr-3",
     "materials": [
       {
@@ -80,14 +84,18 @@
   },
   {
     "id": "course-5",
-    "title": "Database Fundamentals",
-    "price": 600,
+    "title": "Database System",
+    "price": 650,
     "instructorId": "instr-2",
     "materials": [],
     "students": [
       "316e5357-bdc8-4cfe-a993-0d7a32247853",
       {
         "userId": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
+        "unlocked": true
+      },
+      {
+        "userId": "64f83c62-cc38-44f0-b8ee-a97f65027d31",
         "unlocked": true
       }
     ]

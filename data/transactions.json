@@ -124,5 +124,21 @@
     "instructorId": "instr-1",
     "amount": 500,
     "status": "completed"
+  },
+  {
+    "id": "a10022ea-ac7d-434b-babc-a6e51a733597",
+    "learnerId": "64f83c62-cc38-44f0-b8ee-a97f65027d31",
+    "courseId": "course-5",
+    "instructorId": "instr-2",
+    "amount": 600,
+    "status": "completed"
+  },
+  {
+    "id": "92ea5598-cdb1-4014-b29b-c189e865698d",
+    "learnerId": "64f83c62-cc38-44f0-b8ee-a97f65027d31",
+    "courseId": "course-2",
+    "instructorId": "instr-2",
+    "amount": 500,
+    "status": "completed"
   }
 ]
