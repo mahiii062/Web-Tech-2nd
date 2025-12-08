@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Course</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <div class="card">
+      <div class="header">
+        <h2 id="title">Course</h2>
+        <div><button onclick="goBack()">Back</button></div>
+      </div>
+
+      <!-- Certificate Box -->
+      <div id="certificateBox" style="margin-bottom: 20px;"></div>
+
+      <div id="main"></div>
+    </div>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("user") || "null");
+    if (!user) location.href = "/login.html";
+
+    function goBack() { location.href = "/dashboard.html"; }
+
+    async function load() {
+      const params = new URLSearchParams(location.search);
+      const id = params.get("id");
+      const res = await fetch("/api/courses");
+      const courses = await res.json();
+
+      const course = courses.find(c => c.id === id);
+      if (!course) {
+        document.getElementById("main").innerText = "Course not found";
+        return;
+      }
+
+      document.getElementById("title").innerText = course.title;
+
+      document.getElementById("main").innerHTML = `
+        <div>
+          <div class="small">Price: ${course.price}</div>
+          <div class="small">Instructor: ${course.instructorId}</div>
+
+          <div style="margin-top:12px;">
+            <h4>Materials</h4>
+            <div id="materials" class="small">
+              ${course.materials.length ? "" : "No materials yet"}
+            </div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <button onclick="buyCourse('${course.id}', ${course.price})">Buy Course</button>
+            <button onclick="getCertificate('${course.id}')">Get Certificate</button>
+            <p id="msg" class="note"></p>
+          </div>
+        </div>
+      `;
+    }
+
+    async function buyCourse(courseId, price) {
+      const secret = prompt("Enter your bank secret to pay");
+      if (!secret) return;
+
+      const res = await fetch("/api/learner/buy", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: user.id, courseId, secret })
+      });
+
+      const j = await res.json();
+      document.getElementById("msg").innerText = j.message || j.error || JSON.stringify(j);
+    }
+
+    async function getCertificate(courseId) {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user) {
+        alert("Please login first!");
+        return;
+      }
+
+      const res = await fetch("/api/cert/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: user.id, courseId })
+      });
+
+      const data = await res.json();
+
+      if (data.url) {
+        const certBox = document.getElementById("certificateBox");
+
+        certBox.innerHTML = `
+          <div class="cert-success" 
+               style="padding:20px; background:#0b1220; border-radius:12px;
+                      text-align:center; margin-top:15px; box-shadow:0 0 15px rgba(0,0,0,0.4);">
+            <h3 style="color:#00e6a8;">🎉 Certificate Ready!</h3>
+            <p>You can download your certificate below:</p>
+
+            <a class="btn-primary"
+               style="text-decoration:none; padding:10px 20px; display:inline-block; margin-top:10px;"
+               href="${data.url}" target="_blank">
+              Download Certificate
+            </a>
+          </div>
+        `;
+      } else {
+        alert(data.error || "Failed to generate certificate.");
+      }
+    }
+
+    load();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>LMS - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="page-bg">
+
+  <div class="home-container">
+
+    <div class="home-card">
+      <h1 class="home-title">
+        <i class="fa-solid fa-graduation-cap"></i> Learning Management System
+      </h1>
+
+
+      <div class="home-btn-group">
+        <a href="/login.html" class="home-btn">
+          <i class="fa-solid fa-right-to-bracket"></i> Login / Register
+        </a>
+
+        <script>
+          const user = JSON.parse(localStorage.getItem("user"));
+          if (user) {
+            document.write(`
+        <a href="/dashboard.html" class="home-btn">
+          <i class="fa-solid fa-gauge"></i> Go to Dashboard
+        </a>
+      `);
+          }
+        </script>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+[
+  {
+    "userId": "instr-1",
+    "accountNumber": "ACC-INSTR-001",
+    "secret": "instr1secret",
+    "balance": 0
+  },
+  {
+    "userId": "instr-2",
+    "accountNumber": "ACC-INSTR-002",
+    "secret": "instr2secret",
+    "balance": 0
+  },
+  {
+    "userId": "instr-3",
+    "accountNumber": "ACC-INSTR-003",
+    "secret": "instr3secret",
+    "balance": 0
+  },
+  {
+    "userId": "learner-1",
+    "accountNumber": "ACC-LRN-001",
+    "secret": "learner1secret",
+    "balance": 2000
+  },
+  {
+    "userId": "learner-2",
+    "accountNumber": "ACC-LRN-002",
+    "secret": "learner2secret",
+    "balance": 1500
+  },
+  {
+    "userId": "LMS",
+    "accountNumber": "ACC-LMS-000",
+    "secret": "lmssecret",
+    "balance": 0
+  },
+  {
+    "userId": "51c969d4-cae1-45b4-9a33-af185ac8caca",
+    "accountNumber": "mahiiii",
+    "secret": "1218",
+    "balance": 1500
+  },
+  {
+    "userId": "c5449111-bd7e-486f-9167-c32c4b1a1866",
+    "accountNumber": "mahi1218",
+    "secret": "1218",
+    "balance": 2000
+  },
+  {
+    "userId": "316e5357-bdc8-4cfe-a993-0d7a32247853",
+    "accountNumber": "mahi12",
+    "secret": "1218",
+    "balance": 100
+  },
+  {
+    "userId": "4c24623a-3df3-48e4-95a9-0b4829a312d3",
+    "accountNumber": "1218mahi.mashfik",
+    "secret": "1218",
+    "balance": 1550
+  },
+  {
+    "userId": "231fc12d-6ef4-4871-b91e-59e6c6762a53",
+    "accountNumber": "neelimaaaaaa@gmail.com",
+    "secret": "aaaa",
+    "balance": 2000
+  }
+]

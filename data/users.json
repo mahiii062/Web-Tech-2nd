@@ -1,0 +1,86 @@
+[
+  {
+    "id": "instr-1",
+    "name": "Instructor One",
+    "email": "instr1@example.com",
+    "password": "instructor123",
+    "role": "instructor"
+  },
+  {
+    "id": "instr-2",
+    "name": "Instructor Two",
+    "email": "instr2@example.com",
+    "password": "instructor123",
+    "role": "instructor"
+  },
+  {
+    "id": "instr-3",
+    "name": "Instructor Three",
+    "email": "instr3@example.com",
+    "password": "instructor123",
+    "role": "instructor"
+  },
+  {
+    "id": "learner-1",
+    "name": "Learner One",
+    "email": "learner1@example.com",
+    "password": "learner123",
+    "role": "learner"
+  },
+  {
+    "id": "learner-2",
+    "name": "Learner Two",
+    "email": "learner2@example.com",
+    "password": "learner123",
+    "role": "learner"
+  },
+  {
+    "id": "316e5357-bdc8-4cfe-a993-0d7a32247853",
+    "name": "Mahi",
+    "email": "mahi@gmail.com",
+    "password": "1234567890",
+    "role": "learner"
+  },
+  {
+    "id": "30c904e1-60b9-454c-a16b-261c779444ae",
+    "name": "Mahii",
+    "email": "mahii@gmail.com",
+    "password": "1234",
+    "role": "learner"
+  },
+  {
+    "id": "1ec56155-ab92-4d21-ace2-7c1d92433255",
+    "name": "Mahiii",
+    "email": "mahiii@gmail.com",
+    "password": "mahiii",
+    "role": "learner"
+  },
+  {
+    "id": "51c969d4-cae1-45b4-9a33-af185ac8caca",
+    "name": "Mahiiii",
+    "email": "mahiiii@gmail.com",
+    "password": "mahiiii",
+    "role": "learner"
+  },
+  {
+    "id": "c5449111-bd7e-486f-9167-c32c4b1a1866",
+    "name": "Mahi A Rashed Mashfik",
+    "email": "mahi.sust62@gmail.com",
+    "password": "mahi",
+    "role": "learner"
+  },
+  {
+    "id": "4c24623a-3df3-48e4-95a9-0b4829a312d3",
+    "name": "Mahi A Rashed Mashfik",
+    "email": "mahi.mashfik@gmail.com",
+    "password": "mahi.mashfik",
+    "role": "learner"
+  },
+  {
+    "id": "231fc12d-6ef4-4871-b91e-59e6c6762a53",
+    "name": "neel",
+    "email": "neelimaaaaaa@gmail.com",
+    "password": "aaaa",
+    "role": "learner"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1765013202595",
+    "fromUserId": "51c969d4-cae1-45b4-9a33-af185ac8caca",
+    "toUserId": "LMS",
+    "amount": 500,
+    "courseId": "course-1",
+    "date": "2025-12-06T09:26:42.597Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "1765014606047",
+    "fromUserId": "316e5357-bdc8-4cfe-a993-0d7a32247853",
+    "toUserId": "LMS",
+    "amount": 700,
+    "courseId": "course-2",
+    "date": "2025-12-06T09:50:06.048Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "1765015473720",
+    "fromUserId": "316e5357-bdc8-4cfe-a993-0d7a32247853",
+    "toUserId": "LMS",
+    "amount": 600,
+    "courseId": "course-5",
+    "date": "2025-12-06T10:04:33.721Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "1765015709265",
+    "fromUserId": "316e5357-bdc8-4cfe-a993-0d7a32247853",
+    "toUserId": "LMS",
+    "amount": 600,
+    "courseId": "course-5",
+    "date": "2025-12-06T10:08:29.265Z",
+    "instructorPaid": false
+  },
+  {
+    "id": "1765017403108",
+    "fromUserId": "4c24623a-3df3-48e4-95a9-0b4829a312d3",
+    "toUserId": "LMS",
+    "amount": 450,
+    "courseId": "course-3",
+    "date": "2025-12-06T10:36:43.109Z",
+    "instructorPaid": false
+  }
+]

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="login-bg">
+
+  <div class="app center fade-in">
+    <div class="glass-card" style="width: 800px;">
+
+      <div class="header">
+        <h2 id="greet">Dashboard</h2>
+        <div>
+          <span id="roleBadge" class="badge"></span>
+          <button class="btn-secondary" onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <div id="content">
+        <!-- Dynamic content loads here -->
+      </div>
+
+      <hr class="divider" />
+
+    </div>
+  </div>
+
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      location.href = "/login.html";
+    } else {
+      document.getElementById("greet").innerText = `Welcome, ${user.name}`;
+      document.getElementById("roleBadge").innerText = user.role;
+      loadDashboard();
+      loadCertificates();
+    }
+
+    function logout() {
+      localStorage.removeItem("user");
+      location.href = "/login.html";
+    }
+
+    /* -----------------------------------------
+       LOAD DASHBOARD CONTENT
+    ------------------------------------------ */
+    async function loadDashboard() {
+      const content = document.getElementById("content");
+
+      content.innerHTML = `
+        <p class="small">Loading...</p>
+    `;
+
+      const coursesRes = await fetch("/api/courses");
+      const courses = await coursesRes.json();
+
+      if (user.role === "learner") {
+        content.innerHTML = `
+            <h3>Available Courses</h3>
+            <div class="course-list" id="coursesArea"></div>
+
+            <div style="margin-top:14px;">
+                <h4>Your Bank</h4>
+                <div id="balanceInfo" class="small">Loading...</div>
+            </div>
+        `;
+
+        const coursesArea = document.getElementById("coursesArea");
+
+        courses.forEach(c => {
+          coursesArea.innerHTML += `
+                <div class="course">
+                    <strong>${c.title}</strong>
+                    <div class="small">Price: ${c.price}</div>
+                    <div class="small">Instructor: ${c.instructorId}</div>
+                    <button class="btn-primary" onclick="openCourse('${c.id}')">View / Buy</button>
+                </div>
+            `;
+        });
+
+        const balRes = await fetch(`/api/bank/balance/${user.id}`);
+        const bal = await balRes.json();
+        document.getElementById("balanceInfo").innerText = `Balance: ${bal.balance || 0}`;
+      }
+
+      if (user.role === "instructor") {
+        content.innerHTML = `
+            <h3>Your Courses</h3>
+            <div id="myCourses" class="course-list"></div>
+
+            <div style="margin-top:14px;">
+                <h4>Collect Payments</h4>
+                <button class="btn-primary" onclick="collectFunds()">Collect</button>
+                <p id="collectMsg"></p>
+            </div>
+        `;
+
+        const myCourses = document.getElementById("myCourses");
+        const mine = courses.filter(c => c.instructorId === user.id);
+
+        if (mine.length === 0)
+          myCourses.innerHTML = "<p class='small'>You have no courses yet</p>";
+
+        mine.forEach(c => {
+          myCourses.innerHTML += `
+                <div class="course">
+                    <strong>${c.title}</strong>
+                    <div class="small">Price: ${c.price}</div>
+                    <button class="btn-secondary" onclick="openCourse('${c.id}')">Open</button>
+                </div>
+            `;
+        });
+      }
+    }
+
+    /* -----------------------------------------
+        OPEN COURSE PAGE
+    ------------------------------------------ */
+    function openCourse(courseId) {
+      localStorage.setItem("selectedCourse", courseId);
+      location.href = `/course.html?id=${courseId}`;
+    }
+
+    /* -----------------------------------------
+        CERTIFICATE LIST + GENERATION
+    ------------------------------------------ */
+    async function loadCertificates() {
+      const certArea = document.getElementById("certArea");
+
+      const purchasedRes = await fetch("/api/learner/purchased/" + user.id);
+      const purchased = await purchasedRes.json();
+
+      if (!purchased.length) {
+        certArea.innerHTML = "You haven't purchased any courses yet.";
+        return;
+      }
+
+      certArea.innerHTML = "";
+
+      purchased.forEach(c => {
+        certArea.innerHTML += `
+            <div class="course">
+                <strong>${c.title}</strong>
+                <button class="btn-primary" onclick="generateCertificate('${c.id}')">
+                    Generate Certificate
+                </button>
+            </div>
+        `;
+      });
+    }
+
+    async function generateCertificate(courseId) {
+      const res = await fetch("/api/cert/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: user.id, courseId })
+      });
+
+      const data = await res.json();
+
+      if (data.url) {
+        document.getElementById("certMsg").innerHTML = `
+            <div class="cert-success">
+                <h3>🎉 Certificate Ready!</h3>
+                <a href="${data.url}" target="_blank" class="btn-primary">
+                    Download Certificate
+                </a>
+            </div>
+        `;
+      } else {
+        document.getElementById("certMsg").innerText = data.error;
+      }
+    }
+  </script>
+
+</body>
+
+</html>

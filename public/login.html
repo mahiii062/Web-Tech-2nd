@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Login / Register</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app center">
+    <div class="card" style="width:540px;">
+      <div style="display:flex; gap:12px;">
+        <div style="flex:1;">
+          <h3>Login</h3>
+          <input id="loginEmail" placeholder="Email" />
+          <input id="loginPassword" type="password" placeholder="Password" />
+          <button onclick="login()">Login</button>
+        </div>
+
+        <div style="flex:1;">
+          <h3>Register</h3>
+          <input id="regName" placeholder="Full name" />
+          <input id="regEmail" placeholder="Email" />
+          <input id="regPassword" type="password" placeholder="Password" />
+          <select id="regRole">
+            <option value="learner">Learner</option>
+            <option value="instructor">Instructor</option>
+          </select>
+          <button onclick="register()">Register</button>
+        </div>
+      </div>
+
+      <hr style="margin:14px 0; border:none; border-top:1px solid rgba(255,255,255,0.06)" />
+
+    </div>
+  </div>
+
+  <script>
+    async function login() {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+
+      if (!data.user) {
+        alert(data.error || "Login failed");
+        return;
+      }
+
+      // Store user
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      // --- Step 2: Check if user has bank info ----
+      const bankRes = await fetch(`/api/bank/balance/${data.user.id}`);
+      const bankData = await bankRes.json();
+
+      // user has NO bank account → redirect to setup page
+      if (bankData.error === "Account not found") {
+        location.href = "/bank-setup.html";
+      }
+      else {
+        // user already has bank → go to dashboard
+        location.href = "/dashboard.html";
+      }
+    }
+
+    async function register() {
+      const name = document.getElementById("regName").value;
+      const email = document.getElementById("regEmail").value;
+      const password = document.getElementById("regPassword").value;
+      const role = document.getElementById("regRole").value;
+
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, role })
+      });
+
+      const j = await res.json();
+
+      if (j.user) {
+        alert("Registered. Logging in...");
+        localStorage.setItem("user", JSON.stringify(j.user));
+
+        // If learner → must setup bank first
+        if (role === "learner") {
+          location.href = "/bank-setup.html";
+        } else {
+          location.href = "/dashboard.html"; // instructors skip bank
+        }
+      } else {
+        alert(j.error || "Registration failed");
+      }
+    }
+
+    async function setupBank() {
+      const user = JSON.parse(localStorage.getItem("user") || "null");
+      if (!user) return alert("Login first");
+      const accountNumber = document.getElementById("bankAccount").value;
+      const secret = document.getElementById("bankSecret").value;
+      const startingBalance = document.getElementById("bankStarting").value;
+      const res = await fetch("/api/bank/setup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: user.id, accountNumber, secret, startingBalance })
+      });
+      const j = await res.json();
+      document.getElementById("bankMsg").innerText = j.message || j.error;
+    }
+  </script>
+</body>
+
+</html>

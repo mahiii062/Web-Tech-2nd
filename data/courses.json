@@ -1,0 +1,50 @@
+[
+  {
+    "id": "course-1",
+    "title": "JavaScript Basics",
+    "price": 500,
+    "instructorId": "instr-1",
+    "materials": [],
+    "students": [
+      "51c969d4-cae1-45b4-9a33-af185ac8caca"
+    ]
+  },
+  {
+    "id": "course-2",
+    "title": "Node.js Mastery",
+    "price": 700,
+    "instructorId": "instr-2",
+    "materials": [],
+    "students": [
+      "316e5357-bdc8-4cfe-a993-0d7a32247853"
+    ]
+  },
+  {
+    "id": "course-3",
+    "title": "React Beginner",
+    "price": 450,
+    "instructorId": "instr-1",
+    "materials": [],
+    "students": [
+      "4c24623a-3df3-48e4-95a9-0b4829a312d3"
+    ]
+  },
+  {
+    "id": "course-4",
+    "title": "HTML & CSS",
+    "price": 300,
+    "instructorId": "instr-3",
+    "materials": [],
+    "students": []
+  },
+  {
+    "id": "course-5",
+    "title": "Database Fundamentals",
+    "price": 600,
+    "instructorId": "instr-2",
+    "materials": [],
+    "students": [
+      "316e5357-bdc8-4cfe-a993-0d7a32247853"
+    ]
+  }
+]
