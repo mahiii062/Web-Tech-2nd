@@ -155,7 +155,7 @@
     "courseId": "course-5",
     "instructorId": "instr-2",
     "amount": 650,
-    "status": "pending"
+    "status": "completed"
   },
   {
     "id": "2b7d329d-e5e3-4a2f-aaf5-7fa5facc729e",
@@ -163,7 +163,7 @@
     "courseId": "course-5",
     "instructorId": "instr-2",
     "amount": 650,
-    "status": "pending"
+    "status": "completed"
   },
   {
     "id": "2327c03a-bebc-409a-8165-576c0caeb270",
@@ -187,7 +187,7 @@
     "courseId": "course-2",
     "instructorId": "instr-2",
     "amount": 500,
-    "status": "pending"
+    "status": "completed"
   },
   {
     "id": "6f722b7f-59b8-449f-a8d6-b7cb1d9e0a8f",
@@ -195,6 +195,38 @@
     "courseId": "course-5",
     "instructorId": "instr-2",
     "amount": 650,
+    "status": "completed"
+  },
+  {
+    "id": "7fe61a6c-1134-473d-97e4-251957e6bf7b",
+    "learnerId": "842ed392-fc27-4799-a10f-558866f8c32b",
+    "courseId": "course-1",
+    "instructorId": "instr-1",
+    "amount": 450,
+    "status": "pending"
+  },
+  {
+    "id": "b96d93ea-9ec8-4943-8d42-5575d3f375aa",
+    "learnerId": "4576672a-d081-4ab9-be0b-1567cb13d0b0",
+    "courseId": "course-2",
+    "instructorId": "instr-2",
+    "amount": 500,
+    "status": "completed"
+  },
+  {
+    "id": "c391454d-147b-4578-8055-cb1ce774b861",
+    "learnerId": "ded61fe5-dd93-41d1-8c3c-000fe5d2c1e4",
+    "courseId": "course-2",
+    "instructorId": "instr-2",
+    "amount": 500,
+    "status": "completed"
+  },
+  {
+    "id": "b235860d-39a4-4bf4-88a9-aad30d452a75",
+    "learnerId": "ded61fe5-dd93-41d1-8c3c-000fe5d2c1e4",
+    "courseId": "9ae5fa6c-5aef-4f03-a8f7-705999cf1b03",
+    "instructorId": "instr-2",
+    "amount": 700,
     "status": "pending"
   }
 ]

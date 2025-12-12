@@ -1,52 +1,17 @@
 [
   {
-    "id": "course-1",
-    "title": "Structured Programming Language with (C)",
-    "price": 450,
-    "instructorId": "instr-1",
-    "materials": [
-      {
-        "id": "72a90eaf-2de1-486c-9fc5-06f3b11845ab",
-        "type": "video",
-        "title": "qwe",
-        "url": "123"
-      }
-    ],
-    "students": [
-      "51c969d4-cae1-45b4-9a33-af185ac8caca",
-      "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
-      {
-        "userId": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
-        "unlocked": true
-      },
-      {
-        "userId": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
-        "unlocked": false
-      },
-      {
-        "userId": "0950de73-bdf4-4005-9015-0a1d27775662",
-        "unlocked": true
-      },
-      {
-        "userId": "7e5f7b80-e0f5-4a0d-9244-a2837623463c",
-        "unlocked": true
-      },
-      {
-        "userId": "37fc3dbd-2dff-45e5-803b-fac0278f116c",
-        "unlocked": true
-      },
-      {
-        "userId": "aa4d0776-068d-4df7-831b-ab87b4cef300",
-        "unlocked": true
-      }
-    ]
-  },
-  {
     "id": "course-2",
     "title": "Data Structure & Algorithm with (C++)",
     "price": 500,
     "instructorId": "instr-2",
-    "materials": [],
+    "materials": [
+      {
+        "id": "85b31caf-f53b-463b-ad69-9b52ef9ff188",
+        "type": "mcq",
+        "title": "Text",
+        "url": "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/"
+      }
+    ],
     "students": [
       "316e5357-bdc8-4cfe-a993-0d7a32247853",
       {
@@ -59,6 +24,14 @@
       },
       {
         "userId": "aa4d0776-068d-4df7-831b-ab87b4cef300",
+        "unlocked": true
+      },
+      {
+        "userId": "4576672a-d081-4ab9-be0b-1567cb13d0b0",
+        "unlocked": true
+      },
+      {
+        "userId": "ded61fe5-dd93-41d1-8c3c-000fe5d2c1e4",
         "unlocked": true
       }
     ]
@@ -74,34 +47,6 @@
       {
         "userId": "35d56234-ab16-4f76-8f12-a82ea162cd28",
         "unlocked": true
-      }
-    ]
-  },
-  {
-    "id": "course-4",
-    "title": "Introduction to Data Science with Python",
-    "price": 600,
-    "instructorId": "instr-3",
-    "materials": [
-      {
-        "id": "3323386c-ace6-4593-a5b4-8b99ce432a6e",
-        "type": "video",
-        "title": "asd",
-        "url": ""
-      }
-    ],
-    "students": [
-      {
-        "userId": "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
-        "unlocked": true
-      },
-      {
-        "userId": "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
-        "unlocked": false
-      },
-      {
-        "userId": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
-        "unlocked": false
       }
     ]
   },
@@ -138,6 +83,41 @@
       },
       {
         "userId": "aa4d0776-068d-4df7-831b-ab87b4cef300",
+        "unlocked": true
+      }
+    ]
+  },
+  {
+    "id": "d80d002e-5012-46a6-9332-0e57ed17c869",
+    "title": "Java",
+    "price": 300,
+    "instructorId": "instr-2",
+    "materials": [
+      {
+        "id": "0e785779-a9f7-43e0-a08e-2ee5592d3211",
+        "type": "mcq",
+        "title": "Text",
+        "url": "https://www.w3schools.com/java/"
+      }
+    ],
+    "students": []
+  },
+  {
+    "id": "9ae5fa6c-5aef-4f03-a8f7-705999cf1b03",
+    "title": "OS",
+    "price": 700,
+    "instructorId": "instr-2",
+    "materials": [
+      {
+        "id": "bdb52d43-bdd5-4ca1-b680-35162eca6706",
+        "type": "mcq",
+        "title": "Text",
+        "url": "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/"
+      }
+    ],
+    "students": [
+      {
+        "userId": "ded61fe5-dd93-41d1-8c3c-000fe5d2c1e4",
         "unlocked": true
       }
     ]
