@@ -136,5 +136,11 @@
     "accountNumber": "qwe",
     "secret": "123",
     "balance": 2000
+  },
+  {
+    "userId": "100d7b2b-cb27-4eb3-b446-230c5bea9566",
+    "accountNumber": "1234567890",
+    "secret": "1234",
+    "balance": 2000
   }
 ]
