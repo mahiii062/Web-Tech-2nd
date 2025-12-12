@@ -34,6 +34,10 @@
       {
         "userId": "37fc3dbd-2dff-45e5-803b-fac0278f116c",
         "unlocked": true
+      },
+      {
+        "userId": "aa4d0776-068d-4df7-831b-ab87b4cef300",
+        "unlocked": true
       }
     ]
   },
@@ -51,6 +55,10 @@
       },
       {
         "userId": "64f83c62-cc38-44f0-b8ee-a97f65027d31",
+        "unlocked": true
+      },
+      {
+        "userId": "aa4d0776-068d-4df7-831b-ab87b4cef300",
         "unlocked": true
       }
     ]
@@ -102,7 +110,14 @@
     "title": "Database System",
     "price": 650,
     "instructorId": "instr-2",
-    "materials": [],
+    "materials": [
+      {
+        "id": "298c005f-67f7-4dc0-8aac-67e9a170e54d",
+        "type": "video",
+        "title": "Text",
+        "url": "https://www.tutorialspoint.com/dbms/index.htm"
+      }
+    ],
     "students": [
       "316e5357-bdc8-4cfe-a993-0d7a32247853",
       {
@@ -119,6 +134,10 @@
       },
       {
         "userId": "6832c601-3f31-40b7-8cf7-adec9d8dad59",
+        "unlocked": true
+      },
+      {
+        "userId": "aa4d0776-068d-4df7-831b-ab87b4cef300",
         "unlocked": true
       }
     ]
