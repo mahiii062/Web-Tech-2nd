@@ -3,7 +3,7 @@
     "userId": "instr-1",
     "accountNumber": "ACC-INSTR-001",
     "secret": "instr1secret",
-    "balance": 2000
+    "balance": 3000
   },
   {
     "userId": "instr-2",
@@ -33,7 +33,7 @@
     "userId": "LMS",
     "accountNumber": "ACC-LMS-000",
     "secret": "lmssecret",
-    "balance": 600
+    "balance": 1900
   },
   {
     "userId": "51c969d4-cae1-45b4-9a33-af185ac8caca",
@@ -100,5 +100,41 @@
     "accountNumber": "afia99",
     "secret": "afia99",
     "balance": 900
+  },
+  {
+    "userId": "35d56234-ab16-4f76-8f12-a82ea162cd28",
+    "accountNumber": "topu69",
+    "secret": "topu69",
+    "balance": 1450
+  },
+  {
+    "userId": "bf1daa5e-dde6-49b1-bd27-028bef5f2bb2",
+    "accountNumber": "pranta",
+    "secret": "1234",
+    "balance": 1350
+  },
+  {
+    "userId": "6832c601-3f31-40b7-8cf7-adec9d8dad59",
+    "accountNumber": "qwer1234",
+    "secret": "qwer1234",
+    "balance": 1350
+  },
+  {
+    "userId": "37fc3dbd-2dff-45e5-803b-fac0278f116c",
+    "accountNumber": "pranta50",
+    "secret": "123456",
+    "balance": 1550
+  },
+  {
+    "userId": "42ba0f9f-0e0c-43cd-91ba-fe45a7d3710d",
+    "accountNumber": "1234567890",
+    "secret": "1234",
+    "balance": 2000
+  },
+  {
+    "userId": "96380160-0612-4741-ad5c-739cec5a8078",
+    "accountNumber": "qwe",
+    "secret": "123",
+    "balance": 2000
   }
 ]

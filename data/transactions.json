@@ -140,5 +140,37 @@
     "instructorId": "instr-2",
     "amount": 500,
     "status": "completed"
+  },
+  {
+    "id": "094e7a2e-7166-45cd-86a5-a844203627d1",
+    "learnerId": "35d56234-ab16-4f76-8f12-a82ea162cd28",
+    "courseId": "course-3",
+    "instructorId": "instr-1",
+    "amount": 550,
+    "status": "completed"
+  },
+  {
+    "id": "395a95df-a9ed-4445-885c-1f7a54032fc3",
+    "learnerId": "bf1daa5e-dde6-49b1-bd27-028bef5f2bb2",
+    "courseId": "course-5",
+    "instructorId": "instr-2",
+    "amount": 650,
+    "status": "pending"
+  },
+  {
+    "id": "2b7d329d-e5e3-4a2f-aaf5-7fa5facc729e",
+    "learnerId": "6832c601-3f31-40b7-8cf7-adec9d8dad59",
+    "courseId": "course-5",
+    "instructorId": "instr-2",
+    "amount": 650,
+    "status": "pending"
+  },
+  {
+    "id": "2327c03a-bebc-409a-8165-576c0caeb270",
+    "learnerId": "37fc3dbd-2dff-45e5-803b-fac0278f116c",
+    "courseId": "course-1",
+    "instructorId": "instr-1",
+    "amount": 450,
+    "status": "completed"
   }
 ]

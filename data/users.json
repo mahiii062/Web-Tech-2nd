@@ -124,5 +124,47 @@
     "email": "tasnim2103@gmail.com",
     "password": "afia99",
     "role": "learner"
+  },
+  {
+    "id": "35d56234-ab16-4f76-8f12-a82ea162cd28",
+    "name": "Ankan Ghosh",
+    "email": "topu@gmail.com",
+    "password": "topu69",
+    "role": "learner"
+  },
+  {
+    "id": "bf1daa5e-dde6-49b1-bd27-028bef5f2bb2",
+    "name": "Md. Pranta",
+    "email": "pranta@gmail.com",
+    "password": "1234",
+    "role": "learner"
+  },
+  {
+    "id": "6832c601-3f31-40b7-8cf7-adec9d8dad59",
+    "name": "Pritom ",
+    "email": "pritom@gmail.com",
+    "password": "qwer",
+    "role": "learner"
+  },
+  {
+    "id": "37fc3dbd-2dff-45e5-803b-fac0278f116c",
+    "name": "Pranta",
+    "email": "pranta50@gmail.com",
+    "password": "123456",
+    "role": "learner"
+  },
+  {
+    "id": "42ba0f9f-0e0c-43cd-91ba-fe45a7d3710d",
+    "name": "Mahi A Rashed Mashfik",
+    "email": "rash@gmail.com",
+    "password": "1234",
+    "role": "learner"
+  },
+  {
+    "id": "96380160-0612-4741-ad5c-739cec5a8078",
+    "name": "qwe",
+    "email": "qwe@gmail.com",
+    "password": "qwe",
+    "role": "learner"
   }
 ]

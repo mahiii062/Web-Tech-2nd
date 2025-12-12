@@ -1,0 +1,136 @@
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #eef2ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .card {
+        width: 420px;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabs {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 14px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        color: #666;
+    }
+
+    .tab.active {
+        color: white;
+        background: #4f46e5;
+        border-radius: 10px 10px 0 0;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 24px;
+    }
+
+    p.sub {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #666;
+        font-size: 14px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #4f46e5;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        opacity: .9;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin-top: -5px;
+        margin-bottom: 15px;
+    }
+
+    .alt-login {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .alt-btn {
+        width: 48%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        text-align: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+    }
+
+    #registerBox {
+        display: none;
+    }
+
+    .footer-text {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .footer-text a {
+        color: #4f46e5;
+        text-decoration: none;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        text-decoration: none;
+        color: #4f46e5;
+        padding: 6px 0 12px 0;
+        font-weight: 600;
+    }
+
+    .back-btn:hover {
+        opacity: 0.8;
+    }
