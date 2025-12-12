@@ -40,7 +40,7 @@ router.post("/buy", (req, res) => {
   trxs.push(trx);
   writeJSON("transactions.json", trxs);
 
-  // Add learner — auto unlocked (Option A)
+  // Add learner — auto unlocked
   if (!course.students) course.students = [];
   // avoid duplicates
   const already = course.students.find(s => s.userId === userId);

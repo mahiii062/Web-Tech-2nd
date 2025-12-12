@@ -1,219 +1,37 @@
 [
   {
     "id": "instr-1",
-    "name": "Instructo",
+    "name": "ABC",
     "email": "instr1@example.com",
     "password": "pass1",
     "role": "instructor"
   },
   {
     "id": "instr-2",
-    "name": "Instructor Two",
+    "name": "PQR",
     "email": "instr2@example.com",
     "password": "pass2",
     "role": "instructor"
   },
   {
     "id": "instr-3",
-    "name": "Instructor Three",
+    "name": "XYZ",
     "email": "instr3@example.com",
     "password": "pass3",
     "role": "instructor"
   },
   {
-    "id": "learner-1",
-    "name": "Learner One",
-    "email": "learner1@example.com",
-    "password": "learner123",
-    "role": "learner"
-  },
-  {
-    "id": "learner-2",
-    "name": "Learner Two",
-    "email": "learner2@example.com",
-    "password": "learner123",
-    "role": "learner"
-  },
-  {
-    "id": "316e5357-bdc8-4cfe-a993-0d7a32247853",
-    "name": "Mahi",
-    "email": "mahi@gmail.com",
-    "password": "1234567890",
-    "role": "learner"
-  },
-  {
-    "id": "30c904e1-60b9-454c-a16b-261c779444ae",
-    "name": "Mahii",
-    "email": "mahii@gmail.com",
-    "password": "1234",
-    "role": "learner"
-  },
-  {
-    "id": "1ec56155-ab92-4d21-ace2-7c1d92433255",
-    "name": "Mahiii",
-    "email": "mahiii@gmail.com",
-    "password": "mahiii",
-    "role": "learner"
-  },
-  {
-    "id": "51c969d4-cae1-45b4-9a33-af185ac8caca",
-    "name": "Mahiiii",
-    "email": "mahiiii@gmail.com",
-    "password": "mahiiii",
-    "role": "learner"
-  },
-  {
-    "id": "c5449111-bd7e-486f-9167-c32c4b1a1866",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "mahi.sust62@gmail.com",
-    "password": "mahi",
-    "role": "learner"
-  },
-  {
-    "id": "4c24623a-3df3-48e4-95a9-0b4829a312d3",
+    "id": "832a8155-b313-48c0-93d6-c966ff7e52a1",
     "name": "Mahi A Rashed Mashfik",
     "email": "mahi.mashfik@gmail.com",
-    "password": "mahi.mashfik",
-    "role": "learner"
-  },
-  {
-    "id": "a93cc6a5-2c5c-4352-a6ef-01f6499c7608",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "rashed@gmail.com",
-    "password": "123456",
-    "role": "learner"
-  },
-  {
-    "id": "1f3d0d05-24f3-4faf-8d76-dde007e18487",
-    "name": "Neelima Mustak Richi",
-    "email": "neelima@gmail.com",
-    "password": "1234567",
-    "role": "learner"
-  },
-  {
-    "id": "35e42844-16f5-495e-a70a-355485285c2f",
-    "name": "abc",
-    "email": "abc@gmail.com",
-    "password": "123",
-    "role": "learner"
-  },
-  {
-    "id": "48fb01ae-0e42-4ed7-aedd-ae030eda899d",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "abcd@gmail.com",
-    "password": "abcd",
-    "role": "learner"
-  },
-  {
-    "id": "0950de73-bdf4-4005-9015-0a1d27775662",
-    "name": "qwe",
-    "email": "abcqwe@gmail.com",
-    "password": "qwe123",
-    "role": "learner"
-  },
-  {
-    "id": "7e5f7b80-e0f5-4a0d-9244-a2837623463c",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "marm@gmail.com",
-    "password": "marm",
-    "role": "learner"
-  },
-  {
-    "id": "64f83c62-cc38-44f0-b8ee-a97f65027d31",
-    "name": "Afia Farzana",
-    "email": "tasnim2103@gmail.com",
-    "password": "afia99",
-    "role": "learner"
-  },
-  {
-    "id": "35d56234-ab16-4f76-8f12-a82ea162cd28",
-    "name": "Ankan Ghosh",
-    "email": "topu@gmail.com",
-    "password": "topu69",
-    "role": "learner"
-  },
-  {
-    "id": "bf1daa5e-dde6-49b1-bd27-028bef5f2bb2",
-    "name": "Md. Pranta",
-    "email": "pranta@gmail.com",
     "password": "1234",
     "role": "learner"
   },
   {
-    "id": "6832c601-3f31-40b7-8cf7-adec9d8dad59",
-    "name": "Pritom ",
-    "email": "pritom@gmail.com",
-    "password": "qwer",
-    "role": "learner"
-  },
-  {
-    "id": "37fc3dbd-2dff-45e5-803b-fac0278f116c",
-    "name": "Pranta",
-    "email": "pranta50@gmail.com",
-    "password": "123456",
-    "role": "learner"
-  },
-  {
-    "id": "42ba0f9f-0e0c-43cd-91ba-fe45a7d3710d",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "rash@gmail.com",
-    "password": "1234",
-    "role": "learner"
-  },
-  {
-    "id": "96380160-0612-4741-ad5c-739cec5a8078",
-    "name": "qwe",
-    "email": "qwe@gmail.com",
-    "password": "qwe",
-    "role": "learner"
-  },
-  {
-    "id": "100d7b2b-cb27-4eb3-b446-230c5bea9566",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "mah@gmail.com",
-    "password": "1234",
-    "role": "learner"
-  },
-  {
-    "id": "52f8cbb2-4a06-4d16-ba39-2fe864170a3a",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "asdf@gmail.com",
-    "password": "1234",
-    "role": "learner"
-  },
-  {
-    "id": "aa4d0776-068d-4df7-831b-ab87b4cef300",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "qw@gmail.com",
-    "password": "1234",
-    "role": "learner"
-  },
-  {
-    "id": "842ed392-fc27-4799-a10f-558866f8c32b",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "mar@gmail.com",
-    "password": "1234",
-    "role": "learner"
-  },
-  {
-    "id": "4576672a-d081-4ab9-be0b-1567cb13d0b0",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "mashfikk@gmail.com",
-    "password": "1234",
-    "role": "learner"
-  },
-  {
-    "id": "5112866c-ee53-495a-a696-cb5d551eb89b",
+    "id": "631f98bf-5254-445d-85ae-56142d481b64",
     "name": "Mahi A Rashed Mashfik",
     "email": "mashfik.mahi@gmail.com",
     "password": "1234",
-    "role": "learner"
-  },
-  {
-    "id": "ded61fe5-dd93-41d1-8c3c-000fe5d2c1e4",
-    "name": "Afia Farzana",
-    "email": "afia99@gmail.com",
-    "password": "1234",
-    "role": "learner"
+    "role": "instructor"
   }
 ]

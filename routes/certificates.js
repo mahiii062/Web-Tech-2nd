@@ -5,6 +5,7 @@ const { generateCertificate } = require("../helpers/certificate");
 const { readJSON } = require("../helpers/db");
 
 // POST /api/cert/generate  { userId, courseId }
+// from server.js
 router.post("/generate", (req, res) => {
     const { userId, courseId } = req.body;
     if (!userId || !courseId) return res.status(400).json({ error: "Missing fields" });
@@ -28,13 +29,8 @@ router.post("/generate", (req, res) => {
     res.json({ message: "Certificate generated successfully", url: pdfPath });
 });
 
-// Optional: list certificates for a user (for dashboard)
-router.get("/list/:userId", (req, res) => {
-    // If you persist certs you would return them. For now return 404/not implemented.
-    res.status(404).json({ error: "No certificate registry implemented" });
-});
 
-// serve the PDF file (existing)
+// serve the PDF file
 router.get("/:certId", (req, res) => {
     const { certId } = req.params;
     const filePath = path.join(__dirname, "../certificates", `${certId}.pdf`);

@@ -11,6 +11,7 @@ router.post("/collect", (req, res) => {
   const bank = readJSON("bank.json");
   const instAcc = bank.find(b => b.userId === instructorId);
   const lmsAcc = bank.find(b => b.userId === "LMS");
+
   if (!instAcc) return res.status(404).json({ error: "Instructor bank missing" });
   if (!lmsAcc) return res.status(400).json({ error: "LMS bank missing" });
 
@@ -27,7 +28,6 @@ router.post("/collect", (req, res) => {
         instAcc.balance += trx.amount;
         trx.status = "completed";
         collected += trx.amount;
-        // (Optionally) nothing else needed — learners already unlocked
       }
     }
   });
@@ -38,7 +38,7 @@ router.post("/collect", (req, res) => {
   res.json({ message: `Collected ${collected} TK successfully`, collected });
 });
 
-// Instructor uploads materials → gets reward instantly
+// Instructor uploads materials → gets reward instantly (+200)
 router.post("/reward", (req, res) => {
   const { instructorId } = req.body;
   const bank = readJSON("bank.json");

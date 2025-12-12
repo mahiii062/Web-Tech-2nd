@@ -9,8 +9,6 @@
 </head>
 
 <body>
-
-    <!-- Overlay for background blur -->
     <div class="overlay"></div>
 
     <div class="card">
@@ -40,6 +38,7 @@
         const user = JSON.parse(localStorage.getItem("user"));
         if (!user) location.href = "/login.html";
 
+        // saving bank details
         async function saveBank() {
             const accountNumber = document.getElementById("acc").value;
             const secret = document.getElementById("sec").value;
@@ -56,7 +55,7 @@
                     userId: user.id,
                     accountNumber,
                     secret,
-                    startingBalance: 2000
+                    startingBalance: 4000
                 })
             });
 

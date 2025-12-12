@@ -1,41 +1,40 @@
+// modules import
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
-const authRoutes = require("./routes/auth");
-const courseRoutes = require("./routes/courses");
-const bankRoutes = require("./routes/bank");
-const learnerRoutes = require("./routes/learner");
-const instructorRoutes = require("./routes/instructor");
-const certificateRoutes = require("./routes/certificates");
+const authRoutes = require("./routes/auth"); // Login/Register API
+const courseRoutes = require("./routes/courses"); // Course related API
+const bankRoutes = require("./routes/bank"); // Bank transactions API
+const learnerRoutes = require("./routes/learner"); // Student dashboard / enroll API
+const instructorRoutes = require("./routes/instructor"); // Teacher actions
+const certificateRoutes = require("./routes/certificates"); // Certificate generate/download API
 
+// creating express server
 const app = express();
 
-//           MIDDLEWARE
-//          Body parsers ― MUST be before routes
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+//MIDDLEWARE
+app.use(express.json()); // accepts incoming JSON body
+app.use(express.urlencoded({ extended: true })); // read HTML form data
 app.use(bodyParser.json());
 
-//          Serve frontend files
+// Serve frontend (public folder) files
 app.use(express.static(path.join(__dirname, "public")));
 
-//           API ROUTES 
-app.use("/api/auth", authRoutes);
-app.use("/api/courses", courseRoutes);
+// API ROUTES 
+app.use("/api/auth", authRoutes); // receive req from html files and send to routes/auth.js
+app.use("/api/courses", courseRoutes); // receive req from html files and send to routes/instructor.js
 app.use("/api/bank", bankRoutes);
 app.use("/api/learner", learnerRoutes);
 app.use("/api/instructor", instructorRoutes);
-
-//          Certificate API (PDF generator)
 app.use("/api/cert", certificateRoutes);
 
-//         FRONTEND FALLBACK
+// FRONTEND FALLBACK (Home page loader)
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-//          START SERVER
+// START SERVER
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`LMS server running at http://localhost:${PORT}`);

@@ -67,6 +67,7 @@
   </div>
 
   <script>
+    // for switching login & register
     function switchTab(tab) {
       document.getElementById("tabLogin").classList.remove("active");
       document.getElementById("tabRegister").classList.remove("active");
@@ -82,18 +83,54 @@
       }
     }
 
-    /* -------- ORIGINAL FUNCTIONS ------- */
+    // for register information
+    async function register() {
+      // from reg form to take input values 
+      const name = document.getElementById("regName").value;
+      const email = document.getElementById("regEmail").value;
+      const password = document.getElementById("regPassword").value;
+      const role = document.getElementById("regRole").value;
 
+      // sending post reg to create new users
+      // fetch is like sening req to server
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, role })
+      });
+
+      // server res to store here to check user object is in res or not
+      const j = await res.json();
+
+      if (j.user) {
+        alert("Registered. Logging in...");
+        // to store data in locally 
+        localStorage.setItem("user", JSON.stringify(j.user));
+
+        if (role === "learner") {
+          location.href = "/bank-setup.html";
+        } else {
+          location.href = "/dashboard-instructor.html";
+        }
+      } else {
+        alert(j.error || "Registration failed");
+      }
+    }
+
+    // for login information
     async function login() {
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
 
+      // using fetch to send POST req
+      // fetch is like sening req to server
       const res = await fetch("/api/auth/login", {
-        method: "POST",
+        method: "POST", // send login credentials using it
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
       });
 
+      // server res to store in data for comparing that user exist or not
       const data = await res.json();
 
       if (!data.user) {
@@ -101,8 +138,10 @@
         return;
       }
 
+      // to store data in local so that ui can use in future
       localStorage.setItem("user", JSON.stringify(data.user));
 
+      // for checking that bank acc is exist or not via GET method
       const bankRes = await fetch(`/api/bank/balance/${data.user.id}`);
       const bankData = await bankRes.json();
 
@@ -117,33 +156,6 @@
       }
     }
 
-    async function register() {
-      const name = document.getElementById("regName").value;
-      const email = document.getElementById("regEmail").value;
-      const password = document.getElementById("regPassword").value;
-      const role = document.getElementById("regRole").value;
-
-      const res = await fetch("/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password, role })
-      });
-
-      const j = await res.json();
-
-      if (j.user) {
-        alert("Registered. Logging in...");
-        localStorage.setItem("user", JSON.stringify(j.user));
-
-        if (role === "learner") {
-          location.href = "/bank-setup.html";
-        } else {
-          location.href = "/dashboard.html";
-        }
-      } else {
-        alert(j.error || "Registration failed");
-      }
-    }
   </script>
 
 </body>

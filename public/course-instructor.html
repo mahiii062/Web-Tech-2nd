@@ -22,8 +22,13 @@
   <script>
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user) location.href = "/login.html";
-    function goBack() { location.href = "/dashboard-instructor.html"; }
 
+    // user exist then go to dashboard
+    function goBack() {
+      location.href = "/dashboard-instructor.html";
+    }
+
+    // load each course and upload their content
     async function load() {
       const params = new URLSearchParams(location.search);
       const id = params.get("id");
@@ -46,7 +51,11 @@
       <h4>Add New Material</h4>
       <input id="matTitle" placeholder="Material title" />
       <input id="matURL" placeholder="Material URL" />
-      <select id="matType"><option value="video">Video</option><option value="pdf">TEXT</option><option value="mcq">Website</option></select>
+      <select id="matType">
+        <option value="video">Video</option>
+        <option value="Docs">Text</option>
+        <option value="Website">Website</option>
+      </select>
       <button onclick="addMaterial('${course.id}')">Add</button>
     </div>
 
@@ -57,6 +66,7 @@
   `;
     }
 
+    // course material uploaded by Teacher
     async function addMaterial(courseId) {
       const title = document.getElementById("matTitle").value;
       const url = document.getElementById("matURL").value;

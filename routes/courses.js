@@ -3,17 +3,13 @@ const router = express.Router();
 const { readJSON, writeJSON } = require("../helpers/db");
 const { v4: uuidv4 } = require("uuid");
 
-// ----------------------------
 // Get all courses
-// ----------------------------
 router.get("/", (req, res) => {
   const courses = readJSON("courses.json");
   res.json(courses);
 });
 
-// ----------------------------
 // Add a course (instructor)
-// ----------------------------
 router.post("/add", (req, res) => {
   const { instructorId, title, price } = req.body;
 
@@ -38,9 +34,7 @@ router.post("/add", (req, res) => {
   courses.push(newCourse);
   writeJSON("courses.json", courses);
 
-  // ----------------------------
   // NEW: Reward instructor for adding course
-  // ----------------------------
   const bank = readJSON("bank.json");
   const instBank = bank.find(b => b.userId === instructorId);
 
@@ -52,9 +46,7 @@ router.post("/add", (req, res) => {
   res.json({ message: "Course added & instructor rewarded", course: newCourse });
 });
 
-// ----------------------------
 // Add material
-// ----------------------------
 router.post("/:courseId/material", (req, res) => {
   const { courseId } = req.params;
   const { type, title, url } = req.body;

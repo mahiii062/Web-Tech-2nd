@@ -22,7 +22,7 @@ router.post("/setup", (req, res) => {
   res.json({ message: "Bank setup complete" });
 });
 
-// Get balance
+// Get individual balance
 router.get("/balance/:userId", (req, res) => {
   const { userId } = req.params;
   const bank = readJSON("bank.json");

@@ -24,8 +24,12 @@
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user) location.href = "/login.html";
 
-    function goBack() { location.href = "/dashboard-learner.html"; }
+    // if exist then send to dashboard
+    function goBack() { 
+      location.href = "/dashboard-learner.html"; 
+    }
 
+    // load course details
     async function load() {
       const params = new URLSearchParams(location.search);
       const id = params.get("id");
@@ -38,7 +42,7 @@
         return;
       }
 
-      // Option A: student objects are { userId, unlocked }
+      // student objects are { userId, unlocked }
       const stu = course.students ? course.students.find(s => s.userId === user.id) : null;
       const enrolled = !!stu;
       const unlocked = stu ? !!stu.unlocked : false;
@@ -72,6 +76,7 @@
       `;
     }
 
+    // buy course via bank
     async function buyCourse(courseId, price) {
       const secret = prompt("Enter your bank secret to pay");
       if (!secret) return;
@@ -86,6 +91,7 @@
       setTimeout(load, 600);
     }
 
+    // getting certificate
     async function getCertificate(courseId) {
       const res = await fetch("/api/cert/generate", {
         method: "POST",
