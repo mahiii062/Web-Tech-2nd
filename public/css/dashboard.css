@@ -67,10 +67,11 @@ select {
     width: 100%;
     padding: 10px 12px;
     border-radius: 8px;
-    border: none;
+    border: 8px solid rgba(255, 255, 255, 0.1);
     margin-top: 12px;
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff;
+    background: rgba(96, 248, 246, 0.06);
+    color: #170101;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -181,6 +182,23 @@ button {
     box-shadow: 0 0 15px #0098ff;
 }
 
+.btn-primary {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #00e6a8;
+    /* button color */
+    color: #0b1220;
+    /* text color */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: #07342a;
+    color: #ffffff;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -191,4 +209,41 @@ button {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.logout-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    background-color: #035d5f;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #035d5f;
+}
+
+.header {
+    position: relative;
+}
+
+.nav-btn {
+    position: absolute;
+    right: 0;
+    padding: 8px 16px;
+    background-color: #48b1b3;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #30a3a5;
 }

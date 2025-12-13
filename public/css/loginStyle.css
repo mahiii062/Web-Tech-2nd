@@ -19,7 +19,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
         radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
@@ -27,8 +27,13 @@ body::before {
 }
 
 @keyframes float {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(30px, 30px) rotate(360deg); }
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(30px, 30px) rotate(360deg);
+    }
 }
 
 /* Glass effect card */
@@ -39,7 +44,7 @@ body::before {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 40px 35px 35px 35px;
-    box-shadow: 
+    box-shadow:
         0 8px 32px rgba(0, 0, 0, 0.1),
         0 0 0 1px rgba(255, 255, 255, 0.1),
         inset 0 0 24px rgba(255, 255, 255, 0.05);
@@ -137,7 +142,7 @@ select {
     border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 15px;
     background: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
+    color: #04415b;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     box-sizing: border-box;
@@ -258,38 +263,39 @@ select#regRole {
     text-decoration: underline;
 }
 
+
 /* Mobile responsiveness */
 @media (max-width: 480px) {
     body::before {
         animation: float 30s infinite linear;
     }
-    
+
     .card {
         width: 90%;
         padding: 30px 25px 25px 25px;
         margin: 20px;
         border-radius: 16px;
     }
-    
+
     h2 {
         font-size: 24px;
     }
-    
+
     .tabs {
         padding: 3px;
     }
-    
+
     .tab {
         padding: 12px;
         font-size: 15px;
     }
-    
+
     input,
     select,
     button {
         padding: 12px 14px;
     }
-    
+
     .back-btn {
         font-size: 13px;
         padding: 5px 10px;

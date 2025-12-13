@@ -1,9 +1,11 @@
+// requires module: pdfkit
 const PDFDocument = require("pdfkit");
-const fs = require("fs");
-const path = require("path");
+const fs = require("fs"); // file system module
+const path = require("path"); // path module
 
-// MAIN FUNCTION
-function generateCertificate(userName, courseTitle, certId, duration = "2 HRS", completionDate) {
+// function to generate certificate PDF
+function generateCertificate(userName, courseTitle, certId, duration = "4 HRS", completionDate) {
+    // ensure certificates directory exists
     const certDir = path.join(__dirname, "../certificates");
 
     if (!fs.existsSync(certDir)) fs.mkdirSync(certDir);

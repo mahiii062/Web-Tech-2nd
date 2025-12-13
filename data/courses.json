@@ -12,34 +12,14 @@
     "title": "Object Oriented Programming with Java",
     "price": 500,
     "instructorId": "instr-2",
-    "materials": [
-      {
-        "id": "648b3251-4613-42c9-966b-ba6df0fa1d6e",
-        "type": "Website",
-        "title": "Java Tutorial ",
-        "url": "https://www.w3schools.com/java/"
-      }
-    ],
-    "students": [
-      {
-        "userId": "832a8155-b313-48c0-93d6-c966ff7e52a1",
-        "unlocked": true
-      }
-    ]
+    "materials": [],
+    "students": []
   },
   {
     "id": "course-3",
     "title": "Database System",
     "price": 500,
     "instructorId": "instr-3",
-    "materials": [],
-    "students": []
-  },
-  {
-    "id": "fe3c58a7-1c12-4e1b-baed-eea2d8b9aae6",
-    "title": "Operating System",
-    "price": 400,
-    "instructorId": "631f98bf-5254-445d-85ae-56142d481b64",
     "materials": [],
     "students": []
   }

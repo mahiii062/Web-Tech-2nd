@@ -1,15 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const { readJSON, writeJSON } = require("../helpers/db");
-const { v4: uuidv4 } = require("uuid");
+const { v4: uuidv4 } = require("uuid"); // for unique course/material IDs
 
 // Get all courses
+// GET /api/courses/
 router.get("/", (req, res) => {
   const courses = readJSON("courses.json");
   res.json(courses);
 });
 
-// Add a course (instructor)
+// Add a course by (instructor)
+// POST /api/courses/add
 router.post("/add", (req, res) => {
   const { instructorId, title, price } = req.body;
 
@@ -18,7 +20,7 @@ router.post("/add", (req, res) => {
   }
 
   const courses = readJSON("courses.json");
-  if (courses.length >= 5) {
+  if (courses.length >= 5) { // limit to 5 courses
     return res.status(400).json({ error: "LMS hosts only 5 courses" });
   }
 
@@ -32,9 +34,9 @@ router.post("/add", (req, res) => {
   };
 
   courses.push(newCourse);
-  writeJSON("courses.json", courses);
+  writeJSON("courses.json", courses); // save updated courses
 
-  // NEW: Reward instructor for adding course
+  // Reward instructor for adding course
   const bank = readJSON("bank.json");
   const instBank = bank.find(b => b.userId === instructorId);
 
@@ -47,11 +49,12 @@ router.post("/add", (req, res) => {
 });
 
 // Add material
+// POST /api/courses/:courseId/material
 router.post("/:courseId/material", (req, res) => {
-  const { courseId } = req.params;
+  const { courseId } = req.params; // get courseId from URL params for identifying course to edit
   const { type, title, url } = req.body;
 
-  const courses = readJSON("courses.json");
+  const courses = readJSON("courses.json"); // read current courses for editing
   const course = courses.find(c => c.id === courseId);
   if (!course) return res.status(404).json({ error: "Course not found" });
 
@@ -62,9 +65,9 @@ router.post("/:courseId/material", (req, res) => {
     url
   });
 
-  writeJSON("courses.json", courses);
+  writeJSON("courses.json", courses); // save updated courses
 
   res.json({ message: "Material added", course });
 });
 
-module.exports = router;
+module.exports = router; // to use this route from server.js we use exports

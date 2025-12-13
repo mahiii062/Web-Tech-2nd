@@ -84,6 +84,7 @@
     }
 
     // for register information
+    // POST /api/auth/register
     async function register() {
       // from reg form to take input values 
       const name = document.getElementById("regName").value;
@@ -92,7 +93,7 @@
       const role = document.getElementById("regRole").value;
 
       // sending post reg to create new users
-      // fetch is like sening req to server
+      // fetch for sending req to server
       const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -107,10 +108,10 @@
         // to store data in locally 
         localStorage.setItem("user", JSON.stringify(j.user));
 
-        if (role === "learner") {
+        if (role === "learner" || role === "instructor") {
           location.href = "/bank-setup.html";
         } else {
-          location.href = "/dashboard-instructor.html";
+          location.href = "/index.html";
         }
       } else {
         alert(j.error || "Registration failed");
@@ -118,6 +119,7 @@
     }
 
     // for login information
+    // POST /api/auth/login
     async function login() {
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
@@ -142,6 +144,7 @@
       localStorage.setItem("user", JSON.stringify(data.user));
 
       // for checking that bank acc is exist or not via GET method
+      // GET /api/bank/balance/:userId
       const bankRes = await fetch(`/api/bank/balance/${data.user.id}`);
       const bankData = await bankRes.json();
 

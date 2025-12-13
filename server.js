@@ -21,9 +21,9 @@ app.use(bodyParser.json());
 // Serve frontend (public folder) files
 app.use(express.static(path.join(__dirname, "public")));
 
-// API ROUTES 
-app.use("/api/auth", authRoutes); // receive req from html files and send to routes/auth.js
-app.use("/api/courses", courseRoutes); // receive req from html files and send to routes/instructor.js
+// API ROUTES: These send the requests to the route files.
+app.use("/api/auth", authRoutes);
+app.use("/api/courses", courseRoutes);
 app.use("/api/bank", bankRoutes);
 app.use("/api/learner", learnerRoutes);
 app.use("/api/instructor", instructorRoutes);

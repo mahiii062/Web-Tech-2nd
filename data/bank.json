@@ -22,17 +22,5 @@
     "accountNumber": "ACC-LMS-000",
     "secret": "lmssecret",
     "balance": 10000
-  },
-  {
-    "userId": "832a8155-b313-48c0-93d6-c966ff7e52a1",
-    "accountNumber": "12121212",
-    "secret": "1234",
-    "balance": 3500
-  },
-  {
-    "userId": "631f98bf-5254-445d-85ae-56142d481b64",
-    "accountNumber": "21212121",
-    "secret": "1234",
-    "balance": 4200
   }
 ]

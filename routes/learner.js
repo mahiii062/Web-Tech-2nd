@@ -1,31 +1,34 @@
-// routes/learner.js
+// import necessary modules
 const express = require("express");
 const router = express.Router();
 const { readJSON, writeJSON } = require("../helpers/db");
 const { v4: uuidv4 } = require("uuid");
 
 // BUY A COURSE (auto unlock)
+// POST /api/learner/buy
 router.post("/buy", (req, res) => {
-  const { userId, courseId, secret } = req.body;
+  const { userId, courseId, secret } = req.body; // taking userId, courseId and bank secret from req body
   if (!userId || !courseId || !secret) return res.status(400).json({ error: "Missing fields" });
 
-  const users = readJSON("users.json");
+  const users = readJSON("users.json"); // read users data from JSON file
   const user = users.find(u => u.id === userId);
   if (!user) return res.status(404).json({ error: "Learner not found" });
 
-  const courses = readJSON("courses.json");
+  const courses = readJSON("courses.json"); // read courses data from JSON file
   const course = courses.find(c => c.id === courseId);
   if (!course) return res.status(404).json({ error: "Course not found" });
 
-  const bank = readJSON("bank.json");
+  const bank = readJSON("bank.json"); // read bank data from JSON file to load accounts
   const learnerAcc = bank.find(b => b.userId === userId);
   const instAcc = bank.find(b => b.userId === course.instructorId);
   const lmsAcc = bank.find(b => b.userId === "LMS");
 
+  // validate bank accounts
   if (!learnerAcc) return res.status(400).json({ error: "Learner bank missing" });
   if (!instAcc) return res.status(400).json({ error: "Instructor bank missing" });
   if (!lmsAcc) return res.status(400).json({ error: "LMS bank missing" });
 
+  // validate secret and balance
   if (learnerAcc.secret !== secret) return res.status(401).json({ error: "Wrong bank secret" });
   if (learnerAcc.balance < course.price) return res.status(400).json({ error: "Insufficient balance" });
 
@@ -36,7 +39,14 @@ router.post("/buy", (req, res) => {
 
   // Create transaction (still pending for instructor collect)
   const trxs = readJSON("transactions.json");
-  const trx = { id: uuidv4(), learnerId: userId, courseId, instructorId: course.instructorId, amount: course.price, status: "pending" };
+  const trx = {
+    id: uuidv4(),
+    learnerId: userId,
+    courseId,
+    instructorId: course.instructorId,
+    amount: course.price,
+    status: "pending" // pending until instructor collects
+  };
   trxs.push(trx);
   writeJSON("transactions.json", trxs);
 
@@ -48,7 +58,12 @@ router.post("/buy", (req, res) => {
 
   writeJSON("courses.json", courses);
 
-  res.json({ message: "Course purchased successfully. Access unlocked immediately.", unlocked: true, transaction: trx });
+  // respond to frontend
+  res.json({
+    message: "Course purchased successfully. Access unlocked immediately.",
+    unlocked: true,
+    transaction: trx
+  });
 });
 
 module.exports = router;

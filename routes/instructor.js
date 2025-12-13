@@ -1,9 +1,10 @@
-// routes/instructor.js
+// importing required modules
 const express = require("express");
-const router = express.Router();
+const router = express.Router(); // handle /api/instructor/... routes
 const { readJSON, writeJSON } = require("../helpers/db");
 
 // Instructor collects pending payments
+// POST /api/instructor/collect
 router.post("/collect", (req, res) => {
   const { instructorId, secret } = req.body;
   if (!instructorId || !secret) return res.status(400).json({ error: "Missing fields" });
@@ -17,7 +18,7 @@ router.post("/collect", (req, res) => {
 
   if (instAcc.secret !== secret) return res.status(401).json({ error: "Wrong bank secret" });
 
-  const trxs = readJSON("transactions.json");
+  const trxs = readJSON("transactions.json"); // read all transactions and store it to trx for future use
   const courses = readJSON("courses.json");
 
   let collected = 0;
@@ -32,15 +33,18 @@ router.post("/collect", (req, res) => {
     }
   });
 
+  // update course sales records
   writeJSON("transactions.json", trxs);
   writeJSON("bank.json", bank);
 
+  // respond to frontend
   res.json({ message: `Collected ${collected} TK successfully`, collected });
 });
 
 // Instructor uploads materials → gets reward instantly (+200)
+// POST /api/instructor/reward
 router.post("/reward", (req, res) => {
-  const { instructorId } = req.body;
+  const { instructorId } = req.body; // take instructorId from req body 
   const bank = readJSON("bank.json");
   const instAcc = bank.find(b => b.userId === instructorId);
   if (!instAcc) return res.status(404).json({ error: "Instructor bank missing" });

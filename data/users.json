@@ -19,19 +19,5 @@
     "email": "instr3@example.com",
     "password": "pass3",
     "role": "instructor"
-  },
-  {
-    "id": "832a8155-b313-48c0-93d6-c966ff7e52a1",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "mahi.mashfik@gmail.com",
-    "password": "1234",
-    "role": "learner"
-  },
-  {
-    "id": "631f98bf-5254-445d-85ae-56142d481b64",
-    "name": "Mahi A Rashed Mashfik",
-    "email": "mashfik.mahi@gmail.com",
-    "password": "1234",
-    "role": "instructor"
   }
 ]
