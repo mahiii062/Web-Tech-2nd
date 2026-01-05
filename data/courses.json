@@ -4,8 +4,20 @@
     "title": "Data Structure & Algorithm with (C++)",
     "price": 500,
     "instructorId": "instr-1",
-    "materials": [],
-    "students": []
+    "materials": [
+      {
+        "id": "b2c8b7e7-456c-4bc4-809b-70a11eff6e71",
+        "type": "Website",
+        "title": "DSA",
+        "url": "https://www.w3schools.com/java/"
+      }
+    ],
+    "students": [
+      {
+        "userId": "eb40150e-aff9-46a6-92db-313e8ad7c2b9",
+        "unlocked": true
+      }
+    ]
   },
   {
     "id": "course-2",
@@ -21,6 +33,21 @@
     "price": 500,
     "instructorId": "instr-3",
     "materials": [],
+    "students": []
+  },
+  {
+    "id": "9165d758-49bb-433d-aa0d-fb0b10e990f4",
+    "title": "SPL",
+    "price": 300,
+    "instructorId": "instr-1",
+    "materials": [
+      {
+        "id": "4f50baf5-914b-4d8b-ab58-e3c7b3fa3dad",
+        "type": "Website",
+        "title": "SPL",
+        "url": "https://www.tutorialspoint.com/dbms/index.htm"
+      }
+    ],
     "students": []
   }
 ]

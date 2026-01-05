@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "7206117c-ee90-40a4-9193-a004def7f10c",
+    "learnerId": "eb40150e-aff9-46a6-92db-313e8ad7c2b9",
+    "courseId": "course-1",
+    "instructorId": "instr-1",
+    "amount": 500,
+    "status": "completed"
+  }
+]
